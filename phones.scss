@@ -1,0 +1,165 @@
+@mixin font-family {
+    font-family:'Source Sans Pro', sans-serif ;
+}
+@mixin poppins{
+    font-family: 'Poppins', sans-serif;;
+}
+.container{
+    display: block;
+    max-width: 1440px; 
+    // margin: 0 auto; 
+    .first{
+        display: flex;
+        flex-direction: column;
+        height: 768px;
+        background: url(elements/img1.png);
+        width: 100%; 
+        position: relative;
+        .images{
+            margin-left: 46px;
+            // position: relative;
+            z-index: 2;
+            .images__1{
+                width: 100%;
+                height: auto;
+            }
+        }
+        .header{
+            position: absolute;
+            display: inline-flex;
+            align-items: center;
+            height: 80px;
+            max-width: 100%;
+            background-color: rgba($color: #5A27A4, $alpha: 0.8);
+            z-index: 3;
+            @media (max-width:660px){
+                width: 100%; 
+            }         
+            .header__elem1{
+                @include poppins();
+                font-style: normal;
+                font-size: 40px;
+                color: #FFFFFF;
+                margin-left: 136px;
+                @media (max-width:1012px){
+                    margin-left: 15px;
+                }   
+                @media (max-width:660px){
+                    margin-right: 250px;
+                }        
+                @media (max-width:520px){
+                    margin-right:190px
+                }     
+                @media (max-width:470px){
+                    margin-right:130px
+                }    
+                @media (max-width:410px){
+                    margin-right:90px
+                }   
+            }
+            .header__elem2{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                margin-left: 275px;
+                width: 638px;   
+                @media (max-width:1012px){
+                          margin-left: 50px;
+                }  
+                @media (max-width:660px){
+                    display: none;
+                }        
+                .header__elem2__a{
+                    text-decoration: none;
+                    @include font-family();
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 600;
+                    color: #ffffff;
+                    &:hover{
+                        color: #018fee;
+                    }
+                }
+            }
+            .header__search{
+                margin-left: 56px;
+                &:hover{
+                    background-color: #018fee;
+                }       
+            }
+            .header__burger{
+                margin-left: 36px;
+                margin-right: 135px;
+                &:hover{
+                        background-color: #018fee;
+                    }
+                @media (max-width:1012px){
+                    margin-right: 15px;
+                }
+            }
+        }
+        .main{
+            position: absolute;
+            z-index: 3;
+            top:236px;
+            margin-left: 135px;
+            @media (max-width:660px){
+                margin-left:15px;           
+            } 
+            .main__elem1{
+                @include poppins();
+                font-size: 72px;
+                font-weight: 700;
+                line-height: 72px;
+                color: #ffffff;
+                margin:0;
+                @media (max-width:660px){
+                    font-size: 56px;
+                    line-height: 64px;
+                }
+            }
+            .main__elem2{
+                @include poppins();
+                font-size: 16px;
+                font-weight: 600;
+                line-height: 24px;
+                color: #ffffff;
+                margin-top: 26px;
+                margin-bottom: 34px;
+            }
+            .elem3{
+                text-decoration: none;
+                #elem3__button{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                    width: 170px;
+                    height:48px;
+                    background-color:#FFC300 ;
+                    box-sizing: border-box;
+                    border-radius: 24px;
+                    border:none;
+                    @include font-family();
+                    color: #FFFFFF;
+                    font-weight: 700;
+                    font-size: 16px;
+                    font-style: normal;
+                    cursor: pointer;
+                    &:hover{
+                        box-shadow: inset 0 0 15px rgba($color: #0fd62a, $alpha: 0.7);
+                    }
+                    &:active{
+                        font-size: 20px;
+                    }
+                }
+            }
+        }       
+    }
+    // второй слайд
+    @import "box1/relap.scss";
+    //третий слайд
+    @import "box2/bitmap";
+    //четвертый слайд
+    @import "box3/four";
+}
